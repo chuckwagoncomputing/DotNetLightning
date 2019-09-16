@@ -41,4 +41,8 @@ jobs:
     - name: Upload
       run: |
         cd $GITHUB_WORKSPACE/src/DotNetLightning.Core
-        if [ ${{ secrets.NUGET_API_KEY }} ]; then dotnet nuget push ./bin/Release/DotNetLightning.Core.1.0.0-*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json; fi
+        if [ 0 -eq 1 ]; then
+        echo "foo"
+        else
+        echo $GITHUB_REF
+        fi
